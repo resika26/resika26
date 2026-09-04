@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- Dynamic Capsule Wave Header Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=SMKN%201%20Pacitan%20%7C%20Creative%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dian%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=SMKN%201%20Pacitan%20%7C%20Creative%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
 
   <!-- Typing Animated SVG -->
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=600&height=50&lines=Selamat+Datang+di+Portofolio+GitHub+Resika!+✨;Siswa+SMKN+1+Pacitan+%F0%9F%8F%EB;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB;Membangun+Aplikasi+Web+Modern+%26+Kreatif+%F0%9F%9A%80" alt="Typing Text" />
