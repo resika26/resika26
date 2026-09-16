@@ -1,15 +1,16 @@
 <div align="center">
 
   <!-- 🚀 ANIMATED CAPSULE BANNER -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=XII%20RPL%201%20SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
 
   <!-- ⌨️ DYNAMIC TYPING SVG -->
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=650&height=50&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+SMKN+1+Pacitan+%F0%9F%8F%EB;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB;Creating+Modern+%26+Interactive+Web+Apps+%F0%9F%9A%80" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=680&height=50&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+XII+RPL+1+SMKN+1+Pacitan+%F0%9F%8F%EB;Creator+of+Agri-Marketplace+%26+WEB+Jelajah+Pacitan+%F0%9F%8F%95%EF%B8%8F;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB" alt="Typing SVG" />
 
-  <!-- 👁️ PROFILE VIEWS COUNTER -->
+  <!-- 👁️ PROFILE VIEWS COUNTER & BADGES -->
   <p align="center">
     <img src="https://komarev.com/ghpvc/?username=resika26&color=00f2fe&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views"/>
     <img src="https://img.shields.io/github/followers/resika26?label=Followers&style=for-the-badge&color=7f00ff&logo=github" alt="GitHub Followers"/>
+    <img src="https://img.shields.io/badge/Status-XII_RPL_1-00F2FE?style=for-the-badge&logo=graduation-cap&logoColor=black" alt="SMKN 1 Pacitan Status"/>
   </p>
 
 </div>
@@ -21,14 +22,15 @@
 <table border="0">
   <tr>
     <td width="60%">
-      <p>Halo! Saya <b>Resika Dia Prangira</b>, siswa dari <b>SMKN 1 Pacitan</b> yang sangat antusias dalam dunia <b>Front-End Web Development</b> & <b>UI/UX Design</b>. Saya senang membangun antarmuka web yang modern, responsif, dan interaktif.</p>
+      <p>Halo! Saya <b>Resika Dia Prangira</b>, siswa jurusan <b>Pengembangan Perangkat Lunak & Gim (XII RPL 1)</b> di <b>SMKN 1 Pacitan</b>. Saya sangat antusias dalam dunia <b>Front-End Web Development</b>, <b>UI/UX Design</b>, dan membangun aplikasi web yang bermanfaat untuk masyarakat.</p>
       
       <ul>
-        <li>🏫 <b>Sekolah</b>: SMKN 1 Pacitan (Pengembangan Perangkat Lunak & Gim)</li>
-        <li>💡 <b>Fokus saat ini</b>: HTML5, CSS3, JavaScript ES6+, Tailwind CSS, React.js</li>
-        <li>🚀 <b>Proyek Unggulan</b>: <a href="https://github.com/resika26">Kopi Kenangan Senja</a> & App E-Part</li>
-        <li>🎯 <b>Goal</b>: Menjadi Full-Stack Web Engineer Profesional!</li>
-        <li>⚡ <b>Fun Fact</b>: Suka mendesain UI keren berkonsep Dark Mode & Neon Cyberpunk!</li>
+        <li>🏫 <b>Sekolah</b>: SMKN 1 Pacitan (XII RPL 1)</li>
+        <li>📍 <b>Lokasi</b>: Pacitan, Jawa Timur, Indonesia</li>
+        <li>💡 <b>Fokus utama</b>: TypeScript, HTML5, CSS3, JavaScript ES6+, Tailwind CSS, React.js</li>
+        <li>🚀 <b>Proyek Unggulan</b>: Marketplace Tani Pacitan, WEB Jelajah Pacitan, & Kopi Kenangan Senja</li>
+        <li>🎯 <b>Goal</b>: Menjadi Full-Stack Software Engineer & Digital Innovator!</li>
+        <li>⚡ <b>Fun Fact</b>: Suka mendesain UI web berkonsep Dark Mode & Cyberpunk Glow!</li>
       </ul>
     </td>
     <td width="40%" align="center">
@@ -39,19 +41,70 @@
 
 ---
 
+### 🚀 Proyek Unggulan / Featured Repositories
+
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <h4 align="center">🌾 Marketplace Tani Pacitan (Agri-Marketplace)</h4>
+      <p align="center">
+        <a href="https://github.com/resika26/agri-marketplace">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=agri-marketplace&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
+        </a>
+      </p>
+      <p><b>Deskripsi:</b> Platform Marketplace Tani Digital untuk petani Pacitan. Memudahkan transaksi & distribusi hasil pertanian daerah.</p>
+      <p><b>Tech Stack:</b> <code>TypeScript</code>, <code>React</code>, <code>Tailwind CSS</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h4 align="center">🏖️ WEB Jelajah Pacitan</h4>
+      <p align="center">
+        <a href="https://github.com/resika26/WEB-Jelajah-Pacitan">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=WEB-Jelajah-Pacitan&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
+        </a>
+      </p>
+      <p><b>Deskripsi:</b> Portal informasi dan promosi pariwisata keindahan alam, pantai, dan goa di Kabupaten Pacitan.</p>
+      <p><b>Tech Stack:</b> <code>HTML5</code>, <code>CSS3</code>, <code>JavaScript</code></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h4 align="center">☕ Kopi Kenangan Senja</h4>
+      <p align="center">
+        <a href="https://github.com/resika26/kopi-kenangan-senja">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=kopi-kenangan-senja&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
+        </a>
+      </p>
+      <p><b>Deskripsi:</b> Landing page modern kedai kopi kekinian dengan desain antarmuka responsif & estetik.</p>
+      <p><b>Tech Stack:</b> <code>HTML5</code>, <code>CSS3</code>, <code>Flexbox/Grid</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h4 align="center">🌤️ Cuaca App</h4>
+      <p align="center">
+        <a href="https://github.com/resika26/cuaca-app">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=cuaca-app&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
+        </a>
+      </p>
+      <p><b>Deskripsi:</b> Aplikasi pemantau perkiraan cuaca real-time dengan integrasi API cuaca interaktif.</p>
+      <p><b>Tech Stack:</b> <code>JavaScript</code>, <code>REST API</code>, <code>CSS3</code></p>
+    </td>
+  </tr>
+</table>
+
+---
+
 ### 💻 Keahlian & Teknologi / Tech Stack
 
 <p align="center">
-  <b>Front-End & UI Design</b><br/>
+  <b>Programming Languages & Front-End</b><br/>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js,tailwind,bootstrap,figma&theme=dark" alt="Frontend & UI" />
+    <img src="https://skillicons.dev/icons?i=ts,js,html,css,tailwind,bootstrap,react,figma&theme=dark" alt="Frontend & Tech" />
   </a>
 </p>
 
 <p align="center">
   <b>Developer Tools & Environment</b><br/>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=vscode,git,github,nodejs,npm,pnpm&theme=dark" alt="Tools" />
+    <img src="https://skillicons.dev/icons?i=vscode,git,github,nodejs,npm,pnpm,vite&theme=dark" alt="Tools" />
   </a>
 </p>
 
@@ -106,7 +159,7 @@
 
 ---
 
-### 📬 Mari Terhubung / Connect With Me
+### 📬 Media Sosial & Kontak / Connect With Me
 
 <p align="center">
   <a href="https://github.com/resika26" target="_blank">
@@ -118,11 +171,14 @@
   <a href="https://instagram.com" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
   </a>
+  <a href="https://linkedin.com" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
   <a href="https://smkn1pacitan.sch.id" target="_blank">
     <img src="https://img.shields.io/badge/SMKN_1_Pacitan-00F2FE?style=for-the-badge&logo=graduation-cap&logoColor=black"/>
   </a>
 </p>
 
 <p align="center">
-  <sub>✨ Designed with ❤️ by <b>Resika Dia Prangira</b> | SMKN 1 Pacitan ✨</sub>
+  <sub>✨ Designed with ❤️ by <b>Resika Dia Prangira (XII RPL 1 SMKN 1 Pacitan)</b> ✨</sub>
 </p>

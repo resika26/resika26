@@ -288,6 +288,62 @@
       width: 100%;
     }
 
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.2rem;
+      width: 100%;
+    }
+
+    .repo-card {
+      background: rgba(22, 27, 34, 0.7);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .repo-card:hover {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+    }
+
+    .repo-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .repo-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      text-decoration: none;
+    }
+
+    .repo-title:hover {
+      text-decoration: underline;
+    }
+
+    .repo-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+    }
+
+    .tech-tag {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      color: var(--accent-cyan);
+      font-size: 0.78rem;
+      font-family: 'Fira Code', monospace;
+    }
+
     .stats-grid {
       display: flex;
       flex-wrap: wrap;
@@ -321,7 +377,7 @@
       line-height: 1.6;
     }
 
-    /* Workflow Setup Tab */
+    /* Guide Card */
     .guide-card {
       background: rgba(22, 27, 34, 0.6);
       border: 1px solid var(--border-card);
@@ -346,7 +402,7 @@
       margin-left: 1.2rem;
     }
 
-    /* Toast Notification */
+    /* Toast */
     .toast {
       position: fixed;
       bottom: 2rem;
@@ -367,45 +423,6 @@
       transform: translateY(0);
       opacity: 1;
     }
-
-    /* Theme Customizer Controls */
-    .theme-picker {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-
-    .theme-chip {
-      padding: 0.4rem 0.9rem;
-      border-radius: 20px;
-      border: 1px solid var(--border-card);
-      background: rgba(255,255,255,0.05);
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .theme-chip.active {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-      background: rgba(0, 242, 254, 0.1);
-    }
-
-    @media (max-width: 640px) {
-      .header-bar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .action-buttons {
-        width: 100%;
-      }
-      .btn-primary, .btn-secondary {
-        flex: 1;
-        justify-content: center;
-      }
-    }
   </style>
 </head>
 <body>
@@ -416,11 +433,11 @@
     <div class="header-bar">
       <div class="user-info">
         <div class="avatar-glow">
-          <img src="https://github.com/resika26.png" alt="Resika Dia Prangira" onerror="this.src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'"/>
+          <img src="https://avatars.githubusercontent.com/u/254359564?v=4" alt="Resika Dia Prangira" onerror="this.src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'"/>
         </div>
         <div class="title-group">
           <h1>Resika Dia Prangira (resika26)</h1>
-          <p>SMKN 1 Pacitan | Creative Front-End Web Developer</p>
+          <p>XII RPL 1 SMKN 1 Pacitan | Front-End & Creative Web Developer</p>
         </div>
       </div>
       <div class="action-buttons">
@@ -446,9 +463,6 @@
       <button class="tab-btn" onclick="switchTab('setup-guide', this)">
         🚀 Panduan Setup GitHub
       </button>
-      <button class="tab-btn" onclick="switchTab('feature-list', this)">
-        💎 Fitur Modern & Canggih
-      </button>
     </div>
 
     <!-- Main Mockup Window -->
@@ -460,10 +474,10 @@
           <span class="dot dot-green"></span>
         </div>
         <div class="window-title">
-          <span>resika26 / README.md</span>
+          <span>resika26 / README.md (Original Repositories Sync)</span>
         </div>
         <div style="font-size:0.75rem; color:#00f2fe; font-family:'Fira Code', monospace;">
-          ● Live Sync
+          ● 5 Repositories Loaded
         </div>
       </div>
 
@@ -473,28 +487,83 @@
           
           <!-- Banner & Typing -->
           <div class="banner-container">
-            <img id="preview-banner" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" alt="Capsule Banner"/>
+            <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=XII%20RPL%201%20SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" alt="Capsule Banner"/>
           </div>
 
           <div class="center-box">
-            <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=650&height=50&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+SMKN+1+Pacitan+%F0%9F%8F%EB;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB;Creating+Modern+%26+Interactive+Web+Apps+%F0%9F%9A%80" alt="Typing SVG"/>
+            <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=680&height=50&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+XII+RPL+1+SMKN+1+Pacitan+%F0%9F%8F%EB;Creator+of+Agri-Marketplace+%26+WEB+Jelajah+Pacitan+%F0%9F%8F%95%EF%B8%8F;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB" alt="Typing SVG"/>
           </div>
 
           <div class="center-box" style="gap: 0.5rem; flex-wrap: wrap;">
             <img src="https://komarev.com/ghpvc/?username=resika26&color=00f2fe&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views"/>
             <img src="https://img.shields.io/github/followers/resika26?label=Followers&style=for-the-badge&color=7f00ff&logo=github" alt="Followers"/>
+            <img src="https://img.shields.io/badge/Status-XII_RPL_1-00F2FE?style=for-the-badge&logo=graduation-cap&logoColor=black" alt="Status"/>
+          </div>
+
+          <!-- Featured Projects Real -->
+          <div class="section-title">🚀 Proyek Unggulan / Featured Repositories</div>
+          <div class="projects-grid">
+
+            <div class="repo-card">
+              <div class="repo-header">
+                <span style="font-size:1.3rem;">🌾</span>
+                <a href="https://github.com/resika26/agri-marketplace" target="_blank" class="repo-title">Agri-Marketplace</a>
+              </div>
+              <p class="repo-desc">Marketplace Tani Pacitan - Platform Digital Hasil Pertanian pacitan karya Resika Dia Prangira (XII RPL 1 SMKN 1 Pacitan).</p>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Tailwind</span>
+            </div>
+
+            <div class="repo-card">
+              <div class="repo-header">
+                <span style="font-size:1.3rem;">🏖️</span>
+                <a href="https://github.com/resika26/WEB-Jelajah-Pacitan" target="_blank" class="repo-title">WEB-Jelajah-Pacitan</a>
+              </div>
+              <p class="repo-desc">Website eksplorasi pariwisata Pacitan menampilkan keindahan pantai, goa, dan destinasi wisata alam terpopuler.</p>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+            </div>
+
+            <div class="repo-card">
+              <div class="repo-header">
+                <span style="font-size:1.3rem;">☕</span>
+                <a href="https://github.com/resika26/kopi-kenangan-senja" target="_blank" class="repo-title">kopi-kenangan-senja</a>
+              </div>
+              <p class="repo-desc">Landing page interaktif untuk kedai kopi modern dengan desain visual estetik dan animasi smooth.</p>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+
+            <div class="repo-card">
+              <div class="repo-header">
+                <span style="font-size:1.3rem;">🌤️</span>
+                <a href="https://github.com/resika26/cuaca-app" target="_blank" class="repo-title">cuaca-app</a>
+              </div>
+              <p class="repo-desc">Aplikasi pemantau prakiraan cuaca real-time dengan integrasi REST API data cuaca terkini.</p>
+              <span class="tech-tag">JavaScript API</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+
+          </div>
+
+          <!-- Pinned Repo Cards Visual -->
+          <div class="stats-grid" style="margin-top: 1rem;">
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=agri-marketplace&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="48%" />
+            <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=WEB-Jelajah-Pacitan&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="48%" />
           </div>
 
           <!-- Tech Stack -->
           <div class="section-title">💻 Keahlian & Teknologi / Tech Stack</div>
           <div class="center-box">
-            <img src="https://skillicons.dev/icons?i=html,css,js,tailwind,bootstrap,figma,vscode,git&theme=dark" alt="Skill Icons"/>
+            <img src="https://skillicons.dev/icons?i=ts,js,html,css,tailwind,bootstrap,react,figma,vscode,git,nodejs&theme=dark" alt="Skill Icons"/>
           </div>
 
           <!-- Stats & Streaks -->
           <div class="section-title">📊 Live Stats & Streak Counter</div>
           <div class="stats-grid">
-            <img src="https://github-readme-stats.vercel.app/api?username=resika26&show_icons=true&theme=synthwave&hide_border=true&title_color=00f2fe&icon_color=00f2fe&bg_color=0d1117" height="165" alt="GitHub Stats"/>
+            <img src="https://github-readme-stats.vercel.app/api?username=resika26&show_icons=true&theme=synthwave&hide_border=true&title_color=00f2fe&icon_color=00f2fe&bg_color=0d1117&count_private=true" height="165" alt="GitHub Stats"/>
             <img src="https://github-readme-streak-stats.herokuapp.com/?user=resika26&theme=synthwave&hide_border=true&background=0D1117&fire=00F2FE&ring=00F2FE" height="165" alt="Streak Counter"/>
           </div>
 
@@ -523,11 +592,12 @@
           </div>
 
           <!-- Connect -->
-          <div class="section-title">📬 Mari Terhubung / Connect</div>
+          <div class="section-title">📬 Media Sosial & Kontak</div>
           <div class="center-box" style="gap:0.5rem; flex-wrap:wrap;">
             <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
             <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
             <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+            <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
             <img src="https://img.shields.io/badge/SMKN_1_Pacitan-00F2FE?style=for-the-badge&logo=graduation-cap&logoColor=black"/>
           </div>
 
@@ -537,7 +607,7 @@
       <!-- TAB 2: Markdown Code View -->
       <div id="markdown-code" class="tab-content">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
-          <h3 style="color:var(--accent-cyan); font-size:1rem;">📋 Full README Markdown</h3>
+          <h3 style="color:var(--accent-cyan); font-size:1rem;">📋 Full README Markdown (With Projects & Socials)</h3>
           <button class="btn-primary" style="padding:0.4rem 1rem; font-size:0.85rem;" onclick="copyFullMarkdown()">Salin Kode</button>
         </div>
         <div class="code-view-container">
@@ -548,74 +618,18 @@
       <!-- TAB 3: Setup Guide -->
       <div id="setup-guide" class="tab-content">
         <div class="guide-card">
-          <h3>1. 📁 Buat Repositori Khusus Profil GitHub</h3>
+          <h3>1. 📁 Push ke Repositori Profil GitHub</h3>
           <ol>
-            <li>Buka GitHub Anda dan buat repositori baru bernama <b><code>resika26</code></b> (persis sama dengan nama username Anda).</li>
-            <li>Centang opsi <b>"Add a README file"</b>.</li>
-            <li>Paste/salin kode Markdown dari tab <b>Markdown Code</b> ke dalam file <code>README.md</code> tersebut.</li>
+            <li>Buka repositori <b><code>resika26</code></b> di GitHub.</li>
+            <li>Salin isi kode Markdown di tab <b>Markdown Code</b> ke dalam <code>README.md</code> Anda.</li>
           </ol>
         </div>
-
         <div class="guide-card">
-          <h3>2. 🐍 Setup Otomatis Animasi Ular (GitHub Action)</h3>
+          <h3>2. 🐍 Setup Otomatis Game Ular (snake.yml)</h3>
           <ol>
-            <li>Di dalam repositori <b><code>resika26</code></b>, buat folder <code>.github/workflows/</code>.</li>
-            <li>Buat file bernama <code>snake.yml</code> di dalam folder tersebut.</li>
-            <li>Salin kode workflow GitHub Action berikut:</li>
+            <li>Pastikan file <code>.github/workflows/snake.yml</code> sudah ter-push ke GitHub.</li>
+            <li>Animasi uler akan otomatis ter-generate dan ter-update secara berkala.</li>
           </ol>
-          <div class="code-view-container" style="margin-top:0.8rem;">
-            <pre class="code-pre" id="workflow-code"></pre>
-          </div>
-          <ol start="4" style="margin-top:0.8rem;">
-            <li>Simpan (Commit) file tersebut. Setiap 24 jam sekali, GitHub Action akan mengupdate animasi ular commit Anda secara otomatis!</li>
-          </ol>
-        </div>
-      </div>
-
-      <!-- TAB 4: Feature List -->
-      <div id="feature-list" class="tab-content">
-        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.2rem;">
-          
-          <div class="guide-card" style="margin-bottom:0;">
-            <h3>🌊 Dynamic Waving Capsule Banner</h3>
-            <p>Banner animasi waving bergradien neon cyan & purple dengan efek bintang twinkling yang memukau.</p>
-          </div>
-
-          <div class="guide-card" style="margin-bottom:0;">
-            <h3>⌨️ Live Typing SVG Animation</h3>
-            <p>Teks animasi mengetik otomatis yang dinamis menampilkan status, status siswa SMKN 1 Pacitan & keahlian web dev.</p>
-          </div>
-
-          <div class="guide-card" style="margin-bottom:0;">
-            <h3>🎨 SkillIcons Tech Matrix</h3>
-            <p>Visualisasi ikon teknologi modern (HTML, CSS, JS, Tailwind, Figma, Git, VSCode) dengan tema dark aesthetic.</p>
-          </div>
-
-          <div class="guide-card" style="margin-bottom:0;">
-            <h3>📊 Live GitHub Synthwave Stats</h3>
-            <p>Kartu statistik reputasi, bahasa pemrogram terpopuler, dan penghitung streak commit harian bersimbol api.</p>
-          </div>
-
-          <div class="guide-card" style="margin-bottom:0;">
-            <h3>📈 3D & Activity Line Graph</h3>
-            <p>Grafik aktivitas kontribusi berbentuk 3D dan garis gelombang neon modern.</p>
-          </div>
-
-          <div class="guide-card" style="margin-bottom:0;">
-            <h3>🐍 Snake Eating Commits Game</h3>
-            <p>Animasi ular game retro yang memakan kotak-kotak commit hijau pada kontribusi GitHub Anda.</p>
-          </div>
-
-          <div class="guide-card" style="margin-bottom:0;">
-            <h3>🏆 3D GitHub Trophies</h3>
-            <p>Piala penghargaan visual yang terbuka secara otomatis berdasarkan pencapaian kontribusi di GitHub.</p>
-          </div>
-
-          <div class="guide-card" style="margin-bottom:0;">
-            <h3>💬 Daily Tech Quotes Generator</h3>
-            <p>Kutipan motivasi teknologi dan programming pilihan yang berganti secara otomatis setiap hari.</p>
-          </div>
-
         </div>
       </div>
 
@@ -632,15 +646,16 @@
     const fullMarkdownCode = `<div align="center">
 
   <!-- 🚀 ANIMATED CAPSULE BANNER -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=XII%20RPL%201%20SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
 
   <!-- ⌨️ DYNAMIC TYPING SVG -->
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=650&height=50&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+SMKN+1+Pacitan+%F0%9F%8F%EB;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB;Creating+Modern+%26+Interactive+Web+Apps+%F0%9F%9A%80" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=680&height=50&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+XII+RPL+1+SMKN+1+Pacitan+%F0%9F%8F%EB;Creator+of+Agri-Marketplace+%26+WEB+Jelajah+Pacitan+%F0%9F%8F%95%EF%B8%8F;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB" alt="Typing SVG" />
 
-  <!-- 👁️ PROFILE VIEWS COUNTER -->
+  <!-- 👁️ PROFILE VIEWS COUNTER & BADGES -->
   <p align="center">
     <img src="https://komarev.com/ghpvc/?username=resika26&color=00f2fe&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views"/>
     <img src="https://img.shields.io/github/followers/resika26?label=Followers&style=for-the-badge&color=7f00ff&logo=github" alt="GitHub Followers"/>
+    <img src="https://img.shields.io/badge/Status-XII_RPL_1-00F2FE?style=for-the-badge&logo=graduation-cap&logoColor=black" alt="SMKN 1 Pacitan Status"/>
   </p>
 
 </div>
@@ -652,14 +667,15 @@
 <table border="0">
   <tr>
     <td width="60%">
-      <p>Halo! Saya <b>Resika Dia Prangira</b>, siswa dari <b>SMKN 1 Pacitan</b> yang sangat antusias dalam dunia <b>Front-End Web Development</b> & <b>UI/UX Design</b>. Saya senang membangun antarmuka web yang modern, responsif, dan interaktif.</p>
+      <p>Halo! Saya <b>Resika Dia Prangira</b>, siswa jurusan <b>Pengembangan Perangkat Lunak & Gim (XII RPL 1)</b> di <b>SMKN 1 Pacitan</b>. Saya sangat antusias dalam dunia <b>Front-End Web Development</b>, <b>UI/UX Design</b>, dan membangun aplikasi web yang bermanfaat untuk masyarakat.</p>
       
       <ul>
-        <li>🏫 <b>Sekolah</b>: SMKN 1 Pacitan (Pengembangan Perangkat Lunak & Gim)</li>
-        <li>💡 <b>Fokus saat ini</b>: HTML5, CSS3, JavaScript ES6+, Tailwind CSS, React.js</li>
-        <li>🚀 <b>Proyek Unggulan</b>: <a href="https://github.com/resika26">Kopi Kenangan Senja</a> & App E-Part</li>
-        <li>🎯 <b>Goal</b>: Menjadi Full-Stack Web Engineer Profesional!</li>
-        <li>⚡ <b>Fun Fact</b>: Suka mendesain UI keren berkonsep Dark Mode & Neon Cyberpunk!</li>
+        <li>🏫 <b>Sekolah</b>: SMKN 1 Pacitan (XII RPL 1)</li>
+        <li>📍 <b>Lokasi</b>: Pacitan, Jawa Timur, Indonesia</li>
+        <li>💡 <b>Fokus utama</b>: TypeScript, HTML5, CSS3, JavaScript ES6+, Tailwind CSS, React.js</li>
+        <li>🚀 <b>Proyek Unggulan</b>: Marketplace Tani Pacitan, WEB Jelajah Pacitan, & Kopi Kenangan Senja</li>
+        <li>🎯 <b>Goal</b>: Menjadi Full-Stack Software Engineer & Digital Innovator!</li>
+        <li>⚡ <b>Fun Fact</b>: Suka mendesain UI web berkonsep Dark Mode & Cyberpunk Glow!</li>
       </ul>
     </td>
     <td width="40%" align="center">
@@ -670,19 +686,70 @@
 
 ---
 
+### 🚀 Proyek Unggulan / Featured Repositories
+
+<table width="100%">
+  <tr>
+    <td width="50%" valign="top">
+      <h4 align="center">🌾 Marketplace Tani Pacitan (Agri-Marketplace)</h4>
+      <p align="center">
+        <a href="https://github.com/resika26/agri-marketplace">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=agri-marketplace&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
+        </a>
+      </p>
+      <p><b>Deskripsi:</b> Platform Marketplace Tani Digital untuk petani Pacitan. Memudahkan transaksi & distribusi hasil pertanian daerah.</p>
+      <p><b>Tech Stack:</b> <code>TypeScript</code>, <code>React</code>, <code>Tailwind CSS</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h4 align="center">🏖️ WEB Jelajah Pacitan</h4>
+      <p align="center">
+        <a href="https://github.com/resika26/WEB-Jelajah-Pacitan">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=WEB-Jelajah-Pacitan&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
+        </a>
+      </p>
+      <p><b>Deskripsi:</b> Portal informasi dan promosi pariwisata keindahan alam, pantai, dan goa di Kabupaten Pacitan.</p>
+      <p><b>Tech Stack:</b> <code>HTML5</code>, <code>CSS3</code>, <code>JavaScript</code></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h4 align="center">☕ Kopi Kenangan Senja</h4>
+      <p align="center">
+        <a href="https://github.com/resika26/kopi-kenangan-senja">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=kopi-kenangan-senja&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
+        </a>
+      </p>
+      <p><b>Deskripsi:</b> Landing page modern kedai kopi kekinian dengan desain antarmuka responsif & estetik.</p>
+      <p><b>Tech Stack:</b> <code>HTML5</code>, <code>CSS3</code>, <code>Flexbox/Grid</code></p>
+    </td>
+    <td width="50%" valign="top">
+      <h4 align="center">🌤️ Cuaca App</h4>
+      <p align="center">
+        <a href="https://github.com/resika26/cuaca-app">
+          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=cuaca-app&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
+        </a>
+      </p>
+      <p><b>Deskripsi:</b> Aplikasi pemantau perkiraan cuaca real-time dengan integrasi API cuaca interaktif.</p>
+      <p><b>Tech Stack:</b> <code>JavaScript</code>, <code>REST API</code>, <code>CSS3</code></p>
+    </td>
+  </tr>
+</table>
+
+---
+
 ### 💻 Keahlian & Teknologi / Tech Stack
 
 <p align="center">
-  <b>Front-End & UI Design</b><br/>
+  <b>Programming Languages & Front-End</b><br/>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js,tailwind,bootstrap,figma&theme=dark" alt="Frontend & UI" />
+    <img src="https://skillicons.dev/icons?i=ts,js,html,css,tailwind,bootstrap,react,figma&theme=dark" alt="Frontend & Tech" />
   </a>
 </p>
 
 <p align="center">
   <b>Developer Tools & Environment</b><br/>
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=vscode,git,github,nodejs,npm,pnpm&theme=dark" alt="Tools" />
+    <img src="https://skillicons.dev/icons?i=vscode,git,github,nodejs,npm,pnpm,vite&theme=dark" alt="Tools" />
   </a>
 </p>
 
@@ -737,7 +804,7 @@
 
 ---
 
-### 📬 Mari Terhubung / Connect With Me
+### 📬 Media Sosial & Kontak / Connect With Me
 
 <p align="center">
   <a href="https://github.com/resika26" target="_blank">
@@ -749,52 +816,19 @@
   <a href="https://instagram.com" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
   </a>
+  <a href="https://linkedin.com" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
   <a href="https://smkn1pacitan.sch.id" target="_blank">
     <img src="https://img.shields.io/badge/SMKN_1_Pacitan-00F2FE?style=for-the-badge&logo=graduation-cap&logoColor=black"/>
   </a>
 </p>
 
 <p align="center">
-  <sub>✨ Designed with ❤️ by <b>Resika Dia Prangira</b> | SMKN 1 Pacitan ✨</sub>
+  <sub>✨ Designed with ❤️ by <b>Resika Dia Prangira (XII RPL 1 SMKN 1 Pacitan)</b> ✨</sub>
 </p>`;
 
-    const snakeWorkflowCode = `name: generate animation
-
-on:
-  schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
-  push:
-    branches:
-    - main
-    - master
-
-jobs:
-  generate:
-    permissions: 
-      contents: write
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    
-    steps:
-      - name: generate github-contribution-grid-snake.svg
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: resika26
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-          
-      - name: push github-contribution-grid-snake.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}`;
-
     document.getElementById('markdown-text-area').textContent = fullMarkdownCode;
-    document.getElementById('workflow-code').textContent = snakeWorkflowCode;
 
     function switchTab(tabId, btn) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
@@ -807,7 +841,6 @@ jobs:
       navigator.clipboard.writeText(fullMarkdownCode).then(() => {
         showToast('✨ Kode Markdown Berhasil Disalin!');
       }).catch(() => {
-        // Fallback
         const textarea = document.createElement('textarea');
         textarea.value = fullMarkdownCode;
         document.body.appendChild(textarea);
