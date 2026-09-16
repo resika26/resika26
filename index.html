@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Profile Showcase & Generator - Resika Dia Prangira (SMKN 1 Pacitan)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #07090e;
+      --bg-card: rgba(13, 17, 23, 0.85);
+      --accent-cyan: #00f2fe;
+      --accent-purple: #7f00ff;
+      --accent-pink: #ff007f;
+      --text-main: #f0f6fc;
+      --text-muted: #8b949e;
+      --border-glow: rgba(0, 242, 254, 0.3);
+      --border-card: #30363d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(127, 0, 255, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(0, 242, 254, 0.2) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(255, 0, 127, 0.08) 0%, transparent 60%);
+      background-attachment: fixed;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 960px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* Top Bar Header */
+    .header-bar {
+      background: rgba(22, 27, 34, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-glow);
+      border-radius: 20px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .avatar-glow {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      padding: 3px;
+      box-shadow: 0 0 15px var(--accent-cyan);
+    }
+
+    .avatar-glow img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0d1117;
+      object-fit: cover;
+    }
+
+    .title-group h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #00f2fe, #7f00ff, #ff007f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .title-group p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: #05070a;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: none;
+      padding: 0.75rem 1.6rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 0 30px rgba(0, 242, 254, 0.7);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-card);
+      padding: 0.75rem 1.4rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    /* Navigation Tabs */
+    .tab-nav {
+      display: flex;
+      gap: 0.6rem;
+      background: rgba(13, 17, 23, 0.6);
+      padding: 0.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-card);
+      overflow-x: auto;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.7rem 1rem;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(127, 0, 255, 0.15));
+      border: 1px solid var(--accent-cyan);
+      color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+    }
+
+    .tab-btn:hover:not(.active) {
+      color: var(--text-main);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* GitHub Mockup Window */
+    .github-window {
+      background: #0d1117;
+      border: 1px solid var(--border-card);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+
+    .window-header {
+      background: #161b22;
+      padding: 0.8rem 1.4rem;
+      border-bottom: 1px solid #30363d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .window-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: #8b949e;
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    /* Tab Contents */
+    .tab-content {
+      display: none;
+      padding: 2rem 1.5rem;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Live Preview Styling */
+    .readme-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .banner-container {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .banner-container img {
+      width: 100%;
+      display: block;
+    }
+
+    .section-title {
+      width: 100%;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .center-box {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .stats-grid img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    /* Code View Tab */
+    .code-view-container {
+      background: #011627;
+      border: 1px solid #1e2d3d;
+      border-radius: 12px;
+      padding: 1.2rem;
+      position: relative;
+    }
+
+    .code-pre {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: #7ee787;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 550px;
+      overflow-y: auto;
+      line-height: 1.6;
+    }
+
+    /* Workflow Setup Tab */
+    .guide-card {
+      background: rgba(22, 27, 34, 0.6);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .guide-card h3 {
+      color: var(--accent-cyan);
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .guide-card p, .guide-card ol {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-left: 1.2rem;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: #000;
+      font-weight: 700;
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0, 242, 254, 0.5);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1000;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Theme Customizer Controls */
+    .theme-picker {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .theme-chip {
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-card);
+      background: rgba(255,255,255,0.05);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .theme-chip.active {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      background: rgba(0, 242, 254, 0.1);
+    }
+
+    @media (max-width: 640px) {
+      .header-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .action-buttons {
+        width: 100%;
+      }
+      .btn-primary, .btn-secondary {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Bar Header -->
+    <div class="header-bar">
+      <div class="user-info">
+        <div class="avatar-glow">
+          <img src="https://github.com/resika26.png" alt="Resika Dia Prangira" onerror="this.src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png'"/>
+        </div>
+        <div class="title-group">
+          <h1>Resika Dia Prangira (resika26)</h1>
+          <p>SMKN 1 Pacitan | Creative Front-End Web Developer</p>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button class="btn-primary" onclick="copyFullMarkdown()">
+          ✨ Copy Full Markdown README
+        </button>
+        <a href="https://github.com/resika26" target="_blank" style="text-decoration: none;">
+          <button class="btn-secondary">
+            🔗 Buka GitHub Profile
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="switchTab('live-preview', this)">
+        👁️ Live Preview
+      </button>
+      <button class="tab-btn" onclick="switchTab('markdown-code', this)">
+        📝 Markdown Code
+      </button>
+      <button class="tab-btn" onclick="switchTab('setup-guide', this)">
+        🚀 Panduan Setup GitHub
+      </button>
+      <button class="tab-btn" onclick="switchTab('feature-list', this)">
+        💎 Fitur Modern & Canggih
+      </button>
+    </div>
+
+    <!-- Main Mockup Window -->
+    <div class="github-window">
+      <div class="window-header">
+        <div class="window-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="window-title">
+          <span>resika26 / README.md</span>
+        </div>
+        <div style="font-size:0.75rem; color:#00f2fe; font-family:'Fira Code', monospace;">
+          ● Live Sync
+        </div>
+      </div>
+
+      <!-- TAB 1: Live Preview -->
+      <div id="live-preview" class="tab-content active">
+        <div class="readme-body">
+          
+          <!-- Banner & Typing -->
+          <div class="banner-container">
+            <img id="preview-banner" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" alt="Capsule Banner"/>
+          </div>
+
+          <div class="center-box">
+            <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=650&height=50&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+SMKN+1+Pacitan+%F0%9F%8F%EB;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB;Creating+Modern+%26+Interactive+Web+Apps+%F0%9F%9A%80" alt="Typing SVG"/>
+          </div>
+
+          <div class="center-box" style="gap: 0.5rem; flex-wrap: wrap;">
+            <img src="https://komarev.com/ghpvc/?username=resika26&color=00f2fe&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views"/>
+            <img src="https://img.shields.io/github/followers/resika26?label=Followers&style=for-the-badge&color=7f00ff&logo=github" alt="Followers"/>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="section-title">💻 Keahlian & Teknologi / Tech Stack</div>
+          <div class="center-box">
+            <img src="https://skillicons.dev/icons?i=html,css,js,tailwind,bootstrap,figma,vscode,git&theme=dark" alt="Skill Icons"/>
+          </div>
+
+          <!-- Stats & Streaks -->
+          <div class="section-title">📊 Live Stats & Streak Counter</div>
+          <div class="stats-grid">
+            <img src="https://github-readme-stats.vercel.app/api?username=resika26&show_icons=true&theme=synthwave&hide_border=true&title_color=00f2fe&icon_color=00f2fe&bg_color=0d1117" height="165" alt="GitHub Stats"/>
+            <img src="https://github-readme-streak-stats.herokuapp.com/?user=resika26&theme=synthwave&hide_border=true&background=0D1117&fire=00F2FE&ring=00F2FE" height="165" alt="Streak Counter"/>
+          </div>
+
+          <!-- Activity & 3D Graph -->
+          <div class="section-title">📈 Activity Graph & 3D Contribution Graph</div>
+          <div class="center-box">
+            <img src="https://github-readme-activity-graph.vercel.app/graph?username=resika26&theme=react-dark&bg_color=0d1117&color=00f2fe&line=00f2fe&point=ffffff&area=true&hide_border=true" width="100%" alt="Activity Graph"/>
+          </div>
+          <div class="center-box">
+            <img src="https://github-profile-3d-contrib.vercel.app/api?username=resika26&theme=dark" width="100%" alt="3D Graph"/>
+          </div>
+
+          <!-- Snake Game -->
+          <div class="section-title">🐍 Snake Contribution Game</div>
+          <div class="center-box">
+            <img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg" width="100%" style="border-radius:10px; border:1px solid #30363d; background:#011627;" alt="Snake Animation"/>
+          </div>
+
+          <!-- Trophies & Quotes -->
+          <div class="section-title">🏆 Piala Penghargaan & Quote Harian</div>
+          <div class="center-box">
+            <img src="https://github-profile-trophy.vercel.app/?username=resika26&theme=onedark&no-frame=true&column=4&margin-w=15" alt="Trophies"/>
+          </div>
+          <div class="center-box">
+            <img src="https://readme-daily-quotes.vercel.app/api?authorColor=00f2fe&quoteColor=f1f5f9&theme=tokyonight&bg_color=0d1117" alt="Daily Quote"/>
+          </div>
+
+          <!-- Connect -->
+          <div class="section-title">📬 Mari Terhubung / Connect</div>
+          <div class="center-box" style="gap:0.5rem; flex-wrap:wrap;">
+            <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+            <img src="https://img.shields.io/badge/SMKN_1_Pacitan-00F2FE?style=for-the-badge&logo=graduation-cap&logoColor=black"/>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 2: Markdown Code View -->
+      <div id="markdown-code" class="tab-content">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+          <h3 style="color:var(--accent-cyan); font-size:1rem;">📋 Full README Markdown</h3>
+          <button class="btn-primary" style="padding:0.4rem 1rem; font-size:0.85rem;" onclick="copyFullMarkdown()">Salin Kode</button>
+        </div>
+        <div class="code-view-container">
+          <pre class="code-pre" id="markdown-text-area"></pre>
+        </div>
+      </div>
+
+      <!-- TAB 3: Setup Guide -->
+      <div id="setup-guide" class="tab-content">
+        <div class="guide-card">
+          <h3>1. 📁 Buat Repositori Khusus Profil GitHub</h3>
+          <ol>
+            <li>Buka GitHub Anda dan buat repositori baru bernama <b><code>resika26</code></b> (persis sama dengan nama username Anda).</li>
+            <li>Centang opsi <b>"Add a README file"</b>.</li>
+            <li>Paste/salin kode Markdown dari tab <b>Markdown Code</b> ke dalam file <code>README.md</code> tersebut.</li>
+          </ol>
+        </div>
+
+        <div class="guide-card">
+          <h3>2. 🐍 Setup Otomatis Animasi Ular (GitHub Action)</h3>
+          <ol>
+            <li>Di dalam repositori <b><code>resika26</code></b>, buat folder <code>.github/workflows/</code>.</li>
+            <li>Buat file bernama <code>snake.yml</code> di dalam folder tersebut.</li>
+            <li>Salin kode workflow GitHub Action berikut:</li>
+          </ol>
+          <div class="code-view-container" style="margin-top:0.8rem;">
+            <pre class="code-pre" id="workflow-code"></pre>
+          </div>
+          <ol start="4" style="margin-top:0.8rem;">
+            <li>Simpan (Commit) file tersebut. Setiap 24 jam sekali, GitHub Action akan mengupdate animasi ular commit Anda secara otomatis!</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- TAB 4: Feature List -->
+      <div id="feature-list" class="tab-content">
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.2rem;">
+          
+          <div class="guide-card" style="margin-bottom:0;">
+            <h3>🌊 Dynamic Waving Capsule Banner</h3>
+            <p>Banner animasi waving bergradien neon cyan & purple dengan efek bintang twinkling yang memukau.</p>
+          </div>
+
+          <div class="guide-card" style="margin-bottom:0;">
+            <h3>⌨️ Live Typing SVG Animation</h3>
+            <p>Teks animasi mengetik otomatis yang dinamis menampilkan status, status siswa SMKN 1 Pacitan & keahlian web dev.</p>
+          </div>
+
+          <div class="guide-card" style="margin-bottom:0;">
+            <h3>🎨 SkillIcons Tech Matrix</h3>
+            <p>Visualisasi ikon teknologi modern (HTML, CSS, JS, Tailwind, Figma, Git, VSCode) dengan tema dark aesthetic.</p>
+          </div>
+
+          <div class="guide-card" style="margin-bottom:0;">
+            <h3>📊 Live GitHub Synthwave Stats</h3>
+            <p>Kartu statistik reputasi, bahasa pemrogram terpopuler, dan penghitung streak commit harian bersimbol api.</p>
+          </div>
+
+          <div class="guide-card" style="margin-bottom:0;">
+            <h3>📈 3D & Activity Line Graph</h3>
+            <p>Grafik aktivitas kontribusi berbentuk 3D dan garis gelombang neon modern.</p>
+          </div>
+
+          <div class="guide-card" style="margin-bottom:0;">
+            <h3>🐍 Snake Eating Commits Game</h3>
+            <p>Animasi ular game retro yang memakan kotak-kotak commit hijau pada kontribusi GitHub Anda.</p>
+          </div>
+
+          <div class="guide-card" style="margin-bottom:0;">
+            <h3>🏆 3D GitHub Trophies</h3>
+            <p>Piala penghargaan visual yang terbuka secara otomatis berdasarkan pencapaian kontribusi di GitHub.</p>
+          </div>
+
+          <div class="guide-card" style="margin-bottom:0;">
+            <h3>💬 Daily Tech Quotes Generator</h3>
+            <p>Kutipan motivasi teknologi dan programming pilihan yang berganti secara otomatis setiap hari.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    ✨ Kode Markdown Berhasil Disalin!
+  </div>
+
+  <script>
+    const fullMarkdownCode = `<div align="center">
+
+  <!-- 🚀 ANIMATED CAPSULE BANNER -->
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
+
+  <!-- ⌨️ DYNAMIC TYPING SVG -->
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=650&height=50&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+SMKN+1+Pacitan+%F0%9F%8F%EB;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB;Creating+Modern+%26+Interactive+Web+Apps+%F0%9F%9A%80" alt="Typing SVG" />
+
+  <!-- 👁️ PROFILE VIEWS COUNTER -->
+  <p align="center">
+    <img src="https://komarev.com/ghpvc/?username=resika26&color=00f2fe&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views"/>
+    <img src="https://img.shields.io/github/followers/resika26?label=Followers&style=for-the-badge&color=7f00ff&logo=github" alt="GitHub Followers"/>
+  </p>
+
+</div>
+
+---
+
+### 👨‍💻 Tentang Saya / About Me
+
+<table border="0">
+  <tr>
+    <td width="60%">
+      <p>Halo! Saya <b>Resika Dia Prangira</b>, siswa dari <b>SMKN 1 Pacitan</b> yang sangat antusias dalam dunia <b>Front-End Web Development</b> & <b>UI/UX Design</b>. Saya senang membangun antarmuka web yang modern, responsif, dan interaktif.</p>
+      
+      <ul>
+        <li>🏫 <b>Sekolah</b>: SMKN 1 Pacitan (Pengembangan Perangkat Lunak & Gim)</li>
+        <li>💡 <b>Fokus saat ini</b>: HTML5, CSS3, JavaScript ES6+, Tailwind CSS, React.js</li>
+        <li>🚀 <b>Proyek Unggulan</b>: <a href="https://github.com/resika26">Kopi Kenangan Senja</a> & App E-Part</li>
+        <li>🎯 <b>Goal</b>: Menjadi Full-Stack Web Engineer Profesional!</li>
+        <li>⚡ <b>Fun Fact</b>: Suka mendesain UI keren berkonsep Dark Mode & Neon Cyberpunk!</li>
+      </ul>
+    </td>
+    <td width="40%" align="center">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=resika26&layout=donut&theme=synthwave&hide_border=true&title_color=00f2fe&bg_color=0d1117" width="100%" alt="Top Languages Donut"/>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 💻 Keahlian & Teknologi / Tech Stack
+
+<p align="center">
+  <b>Front-End & UI Design</b><br/>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=html,css,js,tailwind,bootstrap,figma&theme=dark" alt="Frontend & UI" />
+  </a>
+</p>
+
+<p align="center">
+  <b>Developer Tools & Environment</b><br/>
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=vscode,git,github,nodejs,npm,pnpm&theme=dark" alt="Tools" />
+  </a>
+</p>
+
+---
+
+### 📊 Statistik GitHub & Streak Fire / Live Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=resika26&show_icons=true&theme=synthwave&hide_border=true&title_color=00f2fe&icon_color=00f2fe&bg_color=0d1117&count_private=true" height="175" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=resika26&theme=synthwave&hide_border=true&background=0D1117&fire=00F2FE&ring=00F2FE&currStreakLabel=00F2FE" height="175" alt="Streak Stats"/>
+</div>
+
+---
+
+### 📈 Activity Graph & 3D Contribution Graph
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=resika26&theme=react-dark&bg_color=0d1117&color=00f2fe&line=00f2fe&point=ffffff&area=true&hide_border=true" width="100%" alt="Activity Graph"/>
+</p>
+
+<p align="center">
+  <img src="https://github-profile-3d-contrib.vercel.app/api?username=resika26&theme=dark" width="100%" alt="3D Contribution Graph" />
+</p>
+
+---
+
+### 🐍 Snake Contribution Game (Ular Makan Commit)
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/resika26/resika26/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/resika26/resika26/output/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/resika26/resika26/output/github-contribution-grid-snake-dark.svg" width="100%">
+  </picture>
+</p>
+
+---
+
+### 🏆 Piala Penghargaan / GitHub Trophies
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=resika26&theme=onedark&no-frame=true&column=4&margin-w=15" alt="GitHub Trophies" />
+</p>
+
+---
+
+### 💬 Daily Tech Quote
+
+<p align="center">
+  <img src="https://readme-daily-quotes.vercel.app/api?authorColor=00f2fe&quoteColor=f1f5f9&theme=tokyonight&bg_color=0d1117" alt="Daily Quote" />
+</p>
+
+---
+
+### 📬 Mari Terhubung / Connect With Me
+
+<p align="center">
+  <a href="https://github.com/resika26" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  <a href="mailto:resikadiaprangira@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+  <a href="https://instagram.com" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+  </a>
+  <a href="https://smkn1pacitan.sch.id" target="_blank">
+    <img src="https://img.shields.io/badge/SMKN_1_Pacitan-00F2FE?style=for-the-badge&logo=graduation-cap&logoColor=black"/>
+  </a>
+</p>
+
+<p align="center">
+  <sub>✨ Designed with ❤️ by <b>Resika Dia Prangira</b> | SMKN 1 Pacitan ✨</sub>
+</p>`;
+
+    const snakeWorkflowCode = `name: generate animation
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+    - master
+
+jobs:
+  generate:
+    permissions: 
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      - name: generate github-contribution-grid-snake.svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: resika26
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          
+      - name: push github-contribution-grid-snake.svg to the output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: \${{ secrets.GITHUB_TOKEN }}`;
+
+    document.getElementById('markdown-text-area').textContent = fullMarkdownCode;
+    document.getElementById('workflow-code').textContent = snakeWorkflowCode;
+
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    function copyFullMarkdown() {
+      navigator.clipboard.writeText(fullMarkdownCode).then(() => {
+        showToast('✨ Kode Markdown Berhasil Disalin!');
+      }).catch(() => {
+        // Fallback
+        const textarea = document.createElement('textarea');
+        textarea.value = fullMarkdownCode;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('✨ Kode Markdown Berhasil Disalin!');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
