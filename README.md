@@ -21,7 +21,7 @@
 
 ### 👨‍💻 Tentang Saya / About Me
 
-Halo! Saya **Resika Dia Prangira**, siswa jurusan **Pengembangan Perangkat Lunak & Gim (XII RPL 1)** di **SMKN 1 Pacitan**. Saya sangat antusias dalam dunia **Front-End Web Development**, **UI/UX Design**, dan membangun aplikasi web yang bermanfaat untuk masyarakat.
+Halo! Saya **Resika Dian Prangira**, siswa jurusan **Pengembangan Perangkat Lunak & Gim (XII RPL 1)** di **SMKN 1 Pacitan**. Saya sangat antusias dalam dunia **Front-End Web Development**, **UI/UX Design**, dan membangun aplikasi web yang bermanfaat untuk masyarakat.
 
 * 🏫 **Sekolah**: SMKN 1 Pacitan (XII RPL 1)
 * 📍 **Lokasi**: Pacitan, Jawa Timur, Indonesia
