@@ -1,10 +1,12 @@
 <div align="center">
 
   <!-- 🚀 ANIMATED CAPSULE BANNER -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=220&section=header&text=Resika%20Dia%20Prangira&fontSize=42&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=XII%20RPL%201%20SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=200&section=header&text=Resika%20Dia%20Prangira&fontSize=40&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=XII%20RPL%201%20SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
 
   <!-- ⌨️ DYNAMIC TYPING SVG -->
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=00F2FE&center=true&vcenter=true&width=680&height=50&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+XII+RPL+1+SMKN+1+Pacitan+%F0%9F%8F%EB;Creator+of+Agri-Marketplace+%26+WEB+Jelajah+Pacitan+%F0%9F%8F%95%EF%B8%8F;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=00F2FE&center=true&vcenter=true&width=600&height=45&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+XII+RPL+1+SMKN+1+Pacitan+%F0%9F%8F%EB;Creator+of+Agri-Marketplace+%26+WEB+Jelajah+Pacitan+%F0%9F%8F%95%EF%B8%8F;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB" alt="Typing SVG" />
+
+  <br/>
 
   <!-- 👁️ PROFILE VIEWS COUNTER & BADGES -->
   <p align="center">
@@ -19,90 +21,58 @@
 
 ### 👨‍💻 Tentang Saya / About Me
 
-<table border="0">
-  <tr>
-    <td width="60%">
-      <p>Halo! Saya <b>Resika Dia Prangira</b>, siswa jurusan <b>Pengembangan Perangkat Lunak & Gim (XII RPL 1)</b> di <b>SMKN 1 Pacitan</b>. Saya sangat antusias dalam dunia <b>Front-End Web Development</b>, <b>UI/UX Design</b>, dan membangun aplikasi web yang bermanfaat untuk masyarakat.</p>
-      
-      <ul>
-        <li>🏫 <b>Sekolah</b>: SMKN 1 Pacitan (XII RPL 1)</li>
-        <li>📍 <b>Lokasi</b>: Pacitan, Jawa Timur, Indonesia</li>
-        <li>💡 <b>Fokus utama</b>: TypeScript, HTML5, CSS3, JavaScript ES6+, Tailwind CSS, React.js</li>
-        <li>🚀 <b>Proyek Unggulan</b>: Marketplace Tani Pacitan, WEB Jelajah Pacitan, & Kopi Kenangan Senja</li>
-        <li>🎯 <b>Goal</b>: Menjadi Full-Stack Software Engineer & Digital Innovator!</li>
-        <li>⚡ <b>Fun Fact</b>: Suka mendesain UI web berkonsep Dark Mode & Cyberpunk Glow!</li>
-      </ul>
-    </td>
-    <td width="40%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=resika26&layout=donut&theme=synthwave&hide_border=true&title_color=00f2fe&bg_color=0d1117" width="100%" alt="Top Languages Donut"/>
-    </td>
-  </tr>
-</table>
+Halo! Saya **Resika Dia Prangira**, siswa jurusan **Pengembangan Perangkat Lunak & Gim (XII RPL 1)** di **SMKN 1 Pacitan**. Saya sangat antusias dalam dunia **Front-End Web Development**, **UI/UX Design**, dan membangun aplikasi web yang bermanfaat untuk masyarakat.
+
+* 🏫 **Sekolah**: SMKN 1 Pacitan (XII RPL 1)
+* 📍 **Lokasi**: Pacitan, Jawa Timur, Indonesia
+* 💡 **Fokus Utama**: TypeScript, HTML5, CSS3, JavaScript ES6+, Tailwind CSS, React.js
+* 🚀 **Proyek Utama**: Marketplace Tani Pacitan, WEB Jelajah Pacitan, & Kopi Kenangan Senja
+* 🎯 **Cita-Cita**: Menjadi Full-Stack Software Engineer & Digital Innovator!
+* ⚡ **Fun Fact**: Suka mendesain UI web berkonsep Dark Mode & Cyberpunk Glow!
 
 ---
 
 ### 🚀 Proyek Unggulan / Featured Repositories
 
-<table width="100%">
-  <tr>
-    <td width="50%" valign="top">
-      <h4 align="center">🌾 Marketplace Tani Pacitan (Agri-Marketplace)</h4>
-      <p align="center">
-        <a href="https://github.com/resika26/agri-marketplace">
-          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=agri-marketplace&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
-        </a>
-      </p>
-      <p><b>Deskripsi:</b> Platform Marketplace Tani Digital untuk petani Pacitan. Memudahkan transaksi & distribusi hasil pertanian daerah.</p>
-      <p><b>Tech Stack:</b> <code>TypeScript</code>, <code>React</code>, <code>Tailwind CSS</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <h4 align="center">🏖️ WEB Jelajah Pacitan</h4>
-      <p align="center">
-        <a href="https://github.com/resika26/WEB-Jelajah-Pacitan">
-          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=WEB-Jelajah-Pacitan&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
-        </a>
-      </p>
-      <p><b>Deskripsi:</b> Portal informasi dan promosi pariwisata keindahan alam, pantai, dan goa di Kabupaten Pacitan.</p>
-      <p><b>Tech Stack:</b> <code>HTML5</code>, <code>CSS3</code>, <code>JavaScript</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h4 align="center">☕ Kopi Kenangan Senja</h4>
-      <p align="center">
-        <a href="https://github.com/resika26/kopi-kenangan-senja">
-          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=kopi-kenangan-senja&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
-        </a>
-      </p>
-      <p><b>Deskripsi:</b> Landing page modern kedai kopi kekinian dengan desain antarmuka responsif & estetik.</p>
-      <p><b>Tech Stack:</b> <code>HTML5</code>, <code>CSS3</code>, <code>Flexbox/Grid</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <h4 align="center">🌤️ Cuaca App</h4>
-      <p align="center">
-        <a href="https://github.com/resika26/cuaca-app">
-          <img src="https://github-readme-stats.vercel.app/api/pin/?username=resika26&repo=cuaca-app&theme=synthwave&hide_border=true&bg_color=0d1117&title_color=00f2fe" width="100%" />
-        </a>
-      </p>
-      <p><b>Deskripsi:</b> Aplikasi pemantau perkiraan cuaca real-time dengan integrasi API cuaca interaktif.</p>
-      <p><b>Tech Stack:</b> <code>JavaScript</code>, <code>REST API</code>, <code>CSS3</code></p>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/resika26/agri-marketplace">
+    <img src="https://img.shields.io/badge/🌾_Agri--Marketplace-TypeScript_%7C_React-00F2FE?style=for-the-badge&logo=typescript&logoColor=black" height="35" />
+  </a>
+  <a href="https://github.com/resika26/WEB-Jelajah-Pacitan">
+    <img src="https://img.shields.io/badge/🏖️_WEB--Jelajah--Pacitan-HTML5_%7C_CSS3-7F00FF?style=for-the-badge&logo=html5&logoColor=white" height="35" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/resika26/kopi-kenangan-senja">
+    <img src="https://img.shields.io/badge/☕_Kopi--Kenangan--Senja-HTML5_%7C_CSS3-FF007F?style=for-the-badge&logo=css3&logoColor=white" height="35" />
+  </a>
+  <a href="https://github.com/resika26/cuaca-app">
+    <img src="https://img.shields.io/badge/🌤️_Cuaca--App-JavaScript_%7C_API-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" height="35" />
+  </a>
+</p>
+
+#### 📋 Ringkasan Detail Proyek:
+- **🌾 Agri-Marketplace (Marketplace Tani Pacitan)**: Platform digital hasil pertanian daerah Pacitan karya siswa XII RPL 1 SMKN 1 Pacitan.
+- **🏖️ WEB Jelajah Pacitan**: Portal informasi & keindahan destinasi wisata pantai dan goa di Pacitan.
+- **☕ Kopi Kenangan Senja**: Landing page modern kedai kopi kekinian dengan desain antarmuka estetik.
+- **🌤️ Cuaca App**: Aplikasi pemantau perkiraan cuaca real-time dengan integrasi REST API data cuaca.
 
 ---
 
 ### 💻 Keahlian & Teknologi / Tech Stack
 
 <p align="center">
-  <b>Programming Languages & Front-End</b><br/>
+  <b>Programming Languages & Front-End</b><br/><br/>
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=ts,js,html,css,tailwind,bootstrap,react,figma&theme=dark" alt="Frontend & Tech" />
   </a>
 </p>
 
+<br/>
+
 <p align="center">
-  <b>Developer Tools & Environment</b><br/>
+  <b>Developer Tools & Environment</b><br/><br/>
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=vscode,git,github,nodejs,npm,pnpm,vite&theme=dark" alt="Tools" />
   </a>
@@ -112,10 +82,10 @@
 
 ### 📊 Statistik GitHub & Streak Fire / Live Stats
 
-<div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=resika26&show_icons=true&theme=synthwave&hide_border=true&title_color=00f2fe&icon_color=00f2fe&bg_color=0d1117&count_private=true" height="175" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=resika26&theme=synthwave&hide_border=true&background=0D1117&fire=00F2FE&ring=00F2FE&currStreakLabel=00F2FE" height="175" alt="Streak Stats"/>
-</div>
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=resika26&show_icons=true&theme=synthwave&hide_border=true&title_color=00f2fe&icon_color=00f2fe&bg_color=0d1117&count_private=true" width="48%" alt="GitHub Stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=resika26&theme=synthwave&hide_border=true&background=0D1117&fire=00F2FE&ring=00F2FE&currStreakLabel=00F2FE" width="48%" alt="Streak Stats"/>
+</p>
 
 ---
 
