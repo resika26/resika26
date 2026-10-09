@@ -1,7 +1,7 @@
 <div align="center">
 
   <!-- 🚀 ANIMATED CAPSULE BANNER -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=200&section=header&text=Resika%20Dia%20Prangira&fontSize=40&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=XII%20RPL%201%20SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,10,24,30&height=200&section=header&text=Resika%20Dian%20Prangira&fontSize=40&fontAlignY=38&animation=twinkling&fontColor=ffffff&desc=XII%20RPL%201%20SMKN%201%20Pacitan%20%7C%20Creative%20Front-End%20Web%20Developer&descSize=18&descAlignY=62" width="100%" alt="Header Banner"/>
 
   <!-- ⌨️ DYNAMIC TYPING SVG -->
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1200&color=00F2FE&center=true&vcenter=true&width=600&height=45&lines=Selamat+Datang+di+Profil+GitHub+Resika!+✨;Siswa+XII+RPL+1+SMKN+1+Pacitan+%F0%9F%8F%EB;Creator+of+Agri-Marketplace+%26+WEB+Jelajah+Pacitan+%F0%9F%8F%95%EF%B8%8F;Front-End+Developer+%26+Tech+Enthusiast+%F0%9F%92%BB" alt="Typing SVG" />
